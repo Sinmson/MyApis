@@ -1,0 +1,65 @@
+*,*::after,*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flexbox.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flexbox.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flexbox.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flexbox > .cell {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.flexbox.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#inputUrl {
+  min-width: 300px;
+  width: auto;
+}
+
+#page {
+  width: 20px;
+}
+
+#results {
+  max-width: 500px;
+}
+
+.result {
+  margin: 15px;
+  margin-right: auto;
+}

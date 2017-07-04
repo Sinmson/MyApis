@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Immowelt suckt</title>
+    <link rel="stylesheet" href="../css/immowelt.css">
+  </head>
+  <body>
+      <div class="flexbox column align-items-center" id="app">
+        <h1>Immowelt</h1>
+        <div class="flexbox cell" >
+          <input id="inputUrl" type="text" name="inputUrl" v-model="inputUrl" placeholder="Search url" @keyup.13="loadSearchResults()">
+          <input type="text" id="page" name="page" v-model="page" placeholder="Seite" type="number" @keyup.13="loadSearchResults()">
+          <button id="btnSubmit" @click="loadSearchResults();" type="button" name="button">Suchen</button>
+        </div>
+
+        <div id="results" class="flexbox cell column align-items-center">
+          <div class="result class flexbox column" v-for="result in resultsSortedByDate" :key="result.url">
+            <strong class="flexbox cell title">{{result.title}}</strong>
+            <div class="flexbox cell">
+              <span>{{result.dateToPrint}}</span>
+              <a :href="result.url" target="_blank">Link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://unpkg.com/vue"></script>
+      <script type="text/javascript" src="../js/jquery-3.0.0.0.min.js"></script>
+      <script type="text/javascript" src="../js/immowelt.js"></script>
+  </body>
+</html>
